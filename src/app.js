@@ -1,11 +1,20 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+document.addEventListener("DOMContentLoaded", () => {
+  const pronoun = ["the", "a", "some", "kind"];
+  const adj = ["great", "big", "kind", "pretty"];
+  const noun = ["jogger", "racoon", "dog", "cat", "opossum"];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+  let phrases = [];
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+  // Triple bucle anidado para combinar todos los elementos
+  for (let i = 0; i < pronoun.length; i++) {
+    for (let j = 0; j < adj.length; j++) {
+      for (let k = 0; k < noun.length; k++) {
+        phrases.push(`${pronoun[i]}${adj[j]}${noun[k]}.com`);
+      }
+    }
+  }
+
+  // Mostrar las frases generadas en la página web
+  const output = document.getElementById("output");
+  output.innerHTML = phrases.join("<br>");
+});
